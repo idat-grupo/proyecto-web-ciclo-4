@@ -1,0 +1,19 @@
+server:
+ port: 8081
+
+#configurar url con una bds propia
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/full-stack-ecommerce?useSSL=false&useUnicode=yes&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: ecommerceapp
+    password: ecommerceapp
+
+  data:
+    rest:
+      base-path: /api
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
