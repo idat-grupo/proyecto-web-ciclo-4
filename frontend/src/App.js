@@ -21,9 +21,9 @@ const App = () => {
         <Route path="/about">
           <About/>
         </Route>
-        <Error path="*">
-          <Home/>
-        </Error>
+        <Route path="*">
+          <Error/>
+        </Route>
       </Switch>
     </Router>
   );
