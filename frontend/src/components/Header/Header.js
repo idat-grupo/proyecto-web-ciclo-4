@@ -19,7 +19,7 @@ const Header = () => {
             </Navbar.Brand>
             <Nav className="ml-auto">
                 <div className="text-white ml-5">Cart</div>
-                <a href="" className="btn btn-primary ml-5">Sign in</a>
+                <a href="/login" className="btn btn-primary ml-5">Sign in</a>
             </Nav>
             
         </Navbar>
