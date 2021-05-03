@@ -9,6 +9,8 @@ import About from './pages/About';
 import Error from './pages/Error';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Carrito from './pages/CarritoCompras';
+//import Carousel from './components/Carousel/Carousel';
 //import Footer from './components/Footer'
 
 
@@ -20,6 +22,9 @@ const App = () => {
         <Route exact path="/">
           <Home/>
         </Route>
+        <Route path="/home">
+          <Home/>
+        </Route>
         <Route path="/about">
           <About/>
         </Route>
@@ -28,6 +33,9 @@ const App = () => {
         </Route>
         <Route path="/register">
           <Register/>
+        </Route>
+        <Route path="/carrito">
+          <Carrito/>
         </Route>
         <Route path="*">
           <Error/>

@@ -17,3 +17,27 @@ code {
   list-style: none;
   display: flex;
 }
+
+nav a{
+  margin-right: "2rem";
+  color: white;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+nav a:hover{
+  color:white;
+}
+
+header {
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.seccion-categorias a {
+  position:absolute;
+  align-items: flex-end;
+}
+
+
+
