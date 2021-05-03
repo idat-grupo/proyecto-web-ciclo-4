@@ -1,7 +1,9 @@
+
 import React from 'react'
 import { Carousel,Row, Col, Container } from 'react-bootstrap'
-//import CarouselImg from '../components/Carousel/Carousel'
-//import Header from '../components/Header/Header'
+import SectionBlog from "../components/HomeComponents/SectionBlog";
+import SectionContacto from "../components/HomeComponents/SectionContacto";
+import SectionMascarilla from "../components/HomeComponents/SectionMascarilla";
 
 import hero1 from '../img/hero-1.jpg'
 import hero2 from '../img/hero-2.jpg'
@@ -81,8 +83,11 @@ const Home = () => {
                 </Row>
             </Container>
         </div>
+      <SectionMascarilla />
+      <SectionBlog />
+      <SectionContacto />
         </>
     )
 }
 
-export default Home
+export default Home;
