@@ -24,30 +24,30 @@ import lombok.Data;
 @Table(name = "producto_inventario")
 @Data
 public class ProductoInventario {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Long id;
-	
+
 	@Column(name = "cantidad")
 	private int cantidad;
-	
-	@OneToOne(mappedBy = "productoInventario", cascade = CascadeType.ALL)
-	private Producto producto;
-	
+
+	// @OneToOne(mappedBy = "productoInventario", cascade = CascadeType.ALL)
+	// private Producto producto;
+
 	@Column(name = "fecha_creacion")
 	@CreationTimestamp
 	private Date fechaCreacion;
-	
+
 	@Column(name = "fecha_modificacion")
 	@UpdateTimestamp
 	private Date fechaModificacion;
-	
+
 	@Column(name = "fecha_eliminacion")
 	@CreationTimestamp
 	private Date fechaEliminacion;
-	
-//	@OneToMany(mappedBy = "prod_inv_id", cascade = CascadeType.ALL)
-//	private List<Producto> productos = new ArrayList<>();
+
+	// @OneToMany(mappedBy = "prod_inv_id", cascade = CascadeType.ALL)
+	// private List<Producto> productos = new ArrayList<>();
 }

@@ -10,6 +10,8 @@ import Error from "./pages/Error";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Footer from "./components/Footer";
+import CatalogoProductos from "./pages/CatalogoProductos";
+import ProductoDetalle from "./pages/ProductoDetalle";
 //import Footer from './components/Footer'
 
 const App = () => {
@@ -28,6 +30,12 @@ const App = () => {
         </Route>
         <Route path="/register">
           <Register />
+        </Route>
+        <Route path="/catalogo_prod">
+          <CatalogoProductos />
+        </Route>
+        <Route path="/prod">
+          <ProductoDetalle />
         </Route>
         <Route path="*">
           <Error />
