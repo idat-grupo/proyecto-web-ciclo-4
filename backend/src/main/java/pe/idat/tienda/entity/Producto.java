@@ -1,5 +1,6 @@
 package pe.idat.tienda.entity;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -23,66 +24,72 @@ import lombok.Data;
 @Table(name = "producto")
 @Data
 public class Producto {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
-	private Long id;
-	
-	@Column(name = "nombre_producto",nullable=false)
-	private String nombre_prod;
-	
-	@Column(name = "descuento")
-	private String descuento;
-	
-	@Column(name = "SKU",nullable=false)
-	private String SKU;
-	
+	@Column(name = "producto_id")
+	private Long producto_id;
+
 	@ManyToOne
-	@JoinColumn(name = "categoria_id",nullable=false)
-	private ProductoCategoria categoriaId;
-	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "inventario_id")
-	private ProductoInventario productoInventario;
-	
-	@Column(name = "precio")
-	private double precio;
-	
+	@JoinColumn(name = "id_categoria", nullable = false)
+	private ProductoCategoria categoria;
+
+	@Column(name = "SKU", nullable = false)
+	private String SKU;
+
+	@Column(name = "nombre_producto", nullable = false)
+	private String nombre_prod;
+
+	@Column(name = "descripcion")
+	private String descripcion;
+
+	@Column(name = "precio_unidad")
+	private BigDecimal precio_unidad;
+
+	@Column(name = "imagen_url")
+	private String imageUrl;
+
+	@Column(name = "active")
+	private boolean active;
+
+	@Column(name = "units_in_stock")
+	private Integer unitsInStock;
+
 	@Column(name = "fecha_creacion")
 	@CreationTimestamp
 	private Date fechaCreacion;
-	
-	@Column(name = "fecha_modificacion")
+
+	@Column(name = "ultima_modificacion")
 	@UpdateTimestamp
-	private Date fechaModificacion;
-	
+	private Date ultimaModificacion;
+
 	@Column(name = "fecha_eliminacion")
-	@CreationTimestamp
 	private Date fechaEliminacion;
-	
-	@OneToOne(mappedBy = "producto", cascade = CascadeType.ALL)
-	private OrdenItem ordenItem;
 
-	public Producto(Long id, String nombre_prod, String descuento, String sKU, 
-			ProductoCategoria categoriaId, ProductoInventario productoInventario,
-			double precio, Date fechaCreacion, Date fechaModificacion, 
-			Date fechaEliminacion, OrdenItem ordenItem) {
-		this.id = id;
-		this.nombre_prod = nombre_prod;
-		this.descuento = descuento;
-		SKU = sKU;
-		this.categoriaId = categoriaId;
-		this.productoInventario = productoInventario;
-		this.precio = precio;
-		this.fechaCreacion = fechaCreacion;
-		this.fechaModificacion = fechaModificacion;
-		this.fechaEliminacion = fechaEliminacion;
-		this.ordenItem = ordenItem;
-	}
+	// @Column(name = "descuento")
+	// private String descuento;
 
-	public Producto() {
-	}
-	
-	
+	// @ManyToOne
+	// @JoinColumn(name = "categoria_id",nullable=false)
+	// private ProductoCategoria categoriaId;
+
+	// @OneToOne(cascade = CascadeType.ALL)
+	// @JoinColumn(name = "inventario_id")
+	// private ProductoInventario productoInventario;
+
+	// @Column(name = "fecha_creacion")
+	// @CreationTimestamp
+	// private Date fechaCreacion;
+
+	// @Column(name = "fecha_modificacion")
+	// @UpdateTimestamp
+	// private Date fechaModificacion;
+
+	// @Column(name = "fecha_eliminacion")
+	// @CreationTimestamp
+	// private Date fechaEliminacion;
+
+	// @OneToOne(mappedBy = "producto", cascade = CascadeType.ALL)
+	// private OrdenItem ordenItem;
+
 }
